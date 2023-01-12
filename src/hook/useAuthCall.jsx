@@ -39,6 +39,7 @@ const useAuthCall = () => {
         userInfo
       );
       console.log(data)
+      localStorage.setItem("isActive", true);
       dispatch(loginSuccess(data));
       navigate("/");
     } catch (error) {
@@ -50,7 +51,8 @@ const useAuthCall = () => {
   const logout = async () => {
     dispatch(fetchStart());
     try {
-      await axios.post(`${BASE_URL}users/logout/`);
+      await axios.post(`${BASE_URL}users/auth/logout/`);
+      localStorage.clear();
       dispatch(logoutSuccess());
     } catch (error) {
       console.log(error);
