@@ -53,6 +53,7 @@ const useAuthCall = () => {
     try {
       await axios.post(`${BASE_URL}users/auth/logout/`);
       localStorage.clear();
+      // console.log(localStorage.setItem("isActive", true));
       dispatch(logoutSuccess());
     } catch (error) {
       console.log(error);

@@ -9,6 +9,7 @@ const authSlice = createSlice({
     error: false,
     isAdmin: false,
     token: null,
+    isActivated : false,
   },
   reducers: {
     fetchStart: (state) => {
@@ -20,11 +21,13 @@ const authSlice = createSlice({
       state.currentUser = payload?.user?.username;
       state.isAdmin = payload?.user?.is_superuser;
       state.token = payload?.key;
+      state.isActivated = localStorage.getItem('isActive');
     },
     logoutSuccess: (state) => {
       state.loading = false;
       state.currentUser = null;
       state.token = null;
+      state.isActivated = localStorage.getItem('isActive');
     },
     registerSuccess: (state, { payload }) => {
       state.loading = false;
@@ -35,6 +38,7 @@ const authSlice = createSlice({
     fetchFail: (state) => {
       state.loading = false;
       state.error = true;
+      // state.isActivate = localStorage.getItem('isActivate');
     },
   },
 });
