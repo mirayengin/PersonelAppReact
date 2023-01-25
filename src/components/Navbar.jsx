@@ -109,15 +109,11 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center relative">
-          <a
-            className="text-gray-500 hover:text-gray-700 focus:text-gray-700 mr-4"
-            href="/#"
-          >
-            <h3>Guest</h3>
-          </a>
+
+            <h3 className="mr-5">Guest</h3>
 
           <div
-            className="dropdown relative"
+            // className="dropdown relative"
           >
             <a
               className="dropdown-toggle flex items-center hidden-arrow"
@@ -208,7 +204,7 @@ const Navbar = () => {
         hover:bg-gray-100
       "
                   >
-                    Sing Up
+                    Register Up
                   </p>
                 </li>
               )}

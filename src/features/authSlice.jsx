@@ -9,7 +9,8 @@ const authSlice = createSlice({
     error: false,
     isAdmin: false,
     token: null,
-    isActivated : false,
+    isActivated: false,
+
   },
   reducers: {
     fetchStart: (state) => {
@@ -40,7 +41,8 @@ const authSlice = createSlice({
       state.error = true;
       // state.isActivate = localStorage.getItem('isActivate');
     },
-  },
+
+  }
 });
 
 export const {
@@ -49,5 +51,6 @@ export const {
   logoutSuccess,
   registerSuccess,
   fetchFail,
+  fetchDepartment,
 } = authSlice.actions;
 export default authSlice.reducer;
